@@ -1,5 +1,6 @@
 package com.example.prototype.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
@@ -32,6 +34,8 @@ import com.example.prototype.domain.SetTaskCompletedUseCase
 import com.example.prototype.ui.theme.PrototypeTheme
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+
+private val PracticeTaskRowBackground = Color(0xFFE3F2FD)
 
 @Composable
 fun PracticeTasksApp(
@@ -156,7 +160,10 @@ fun PracticeTaskRow(
     modifier: Modifier = Modifier,
 ) {
     Row(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .background(PracticeTaskRowBackground)
+            .padding(8.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Checkbox(
