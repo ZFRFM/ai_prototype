@@ -4,7 +4,7 @@ tracker:
   api_key: $LINEAR_API_KEY
   required_labels: [ai-ready]
   active_states: [Todo, In Progress]
-  terminal_states: [Done, Canceled, Cancelled, Duplicate, Human Review]
+  terminal_states: [Done, Canceled, Cancelled, Duplicate, In Review]
 
 polling:
   interval_ms: 30000
@@ -48,7 +48,7 @@ Expected workflow:
 - Commit the work with a concise message that includes the issue identifier.
 - Push the branch and open a pull request.
 - Include changed files and verification results in the pull request summary.
-- Move the issue to `Human Review`, not `Done`.
+- Move the issue to `In Review`, not `Done`.
 
 Safety rules:
 - Do not auto-merge.
